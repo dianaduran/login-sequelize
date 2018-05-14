@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
-var PORT = process.env.PORT || 8082;
+var PORT = process.env.PORT || 8083;
 
 // Requiring our models for syncing
 var db = require("./models");
