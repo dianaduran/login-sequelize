@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
-var PORT = process.env.PORT || 8084;
+var PORT = process.env.PORT || 8082;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -26,9 +26,9 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 require("./routes/html-routes.js")(app);
 require("./routes/login-routes.js")(app);
+
 require("./routes/task.js")(app);
-
-
+require("./routes/library-routes.js")(app);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync({ force: false }).then(function() {
