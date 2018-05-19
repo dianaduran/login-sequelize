@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
-var PORT = process.env.PORT || 8083;
+var PORT = process.env.PORT || 8084;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -26,7 +26,7 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 require("./routes/html-routes.js")(app);
 require("./routes/login-routes.js")(app);
-//require("./routes/register-routes.js")(app);
+require("./routes/task.js")(app);
 
 
 
